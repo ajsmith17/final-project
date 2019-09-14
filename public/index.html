@@ -8,9 +8,10 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller = "MainController as ctrl" data-ng-init="ctrl.getNews()">
-    <h1>{{ ctrl.response }}</h1>
-    <form ng-submit="ctrl.getNews()">
-      <button type="submit">SUBMIT</button>
-    </form>
+    <h1>News App</h1>
+    <div ng-repeat="article in ctrl.news">
+      <h2>{{article.title}}</h2>
+      <p>{{article.content}}</p>
+    </div>
   </body>
 </html>

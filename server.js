@@ -18,7 +18,7 @@ console.log(dotenv);
 
 app.use(express.json());
 
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 const FINAL_DB = process.env.FINAL_DB
