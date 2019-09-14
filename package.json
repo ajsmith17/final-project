@@ -1,0 +1,27 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "engines": {
+    "node": "8.10.0"
+  },
+  "description": "### User Stories",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajsmith17/final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajsmith17/final-project/issues"
+  },
+  "homepage": "https://github.com/ajsmith17/final-project#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  }
+}

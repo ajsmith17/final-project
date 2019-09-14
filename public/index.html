@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="NewsApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller = "MainController as ctrl" data-ng-init="ctrl.getNews()">
+    <h1>{{ ctrl.response }}</h1>
+    <form ng-submit="ctrl.getNews()">
+      <button type="submit">SUBMIT</button>
+    </form>
+  </body>
+</html>
