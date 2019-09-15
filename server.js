@@ -23,8 +23,8 @@ app.use(express.static('public'));
 
 const FINAL_DB = process.env.FINAL_DB
 
-// const citiesController = require('./controllers/cities.js');
-// app.use('/cities', citiesController);
+const commentsController = require('./controllers/comments.js');
+app.use('/comments', commentsController);
 
 // Error / success
 mongoose.connect(FINAL_DB, {useNewUrlParser:true});
