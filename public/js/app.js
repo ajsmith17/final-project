@@ -43,6 +43,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/comments',
     }).then(function(response){
       controller.comments = response.data;
+      console.log(response);
     }, function(error){
       console.log(error);
     });

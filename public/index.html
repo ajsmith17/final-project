@@ -7,11 +7,32 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
-  <body ng-controller = "MainController as ctrl" data-ng-init="ctrl.getNews()">
+  <body ng-controller="MainController as ctrl" data-ng-init="ctrl.getNews()">
     <h1>News App</h1>
+
+    <nav>
+
+    </nav>
+
     <div ng-repeat="article in ctrl.news">
       <h2>{{article.title}}</h2>
       <p>{{article.content}}</p>
     </div>
+
+    <h3>Leave a Comment</h3>
+
+    <form ng-submit="ctrl.addComment()">
+      <input type="text" ng-model="ctrl.name" placeholder="Name">
+      <textarea type="text" ng-model="ctrl.comment" placeholder="Comment..." rows="10" cols="80"></textarea>
+      <input type="submit" value="POST COMMENT">
+    </form>
+
+    <div data-ng-init="ctrl.getComments()">
+      <div ng-repeat="comment in ctrl.comments">
+        <h4>{{comment.name}}</h4>
+        <p>{{comment.comment}}</p>
+      </div>
+    </div>
+
   </body>
 </html>
