@@ -1,10 +1,20 @@
 const app = angular.module('NewsApp', []);
 
+app.controller('BaseCtrl', [function(){
+
+  this.includePath = 'partials/us.html';
+
+  this.changeInclude = (path) => {
+    this.includePath = 'partials/' + path + '.html';
+  }
+
+}])
+
 app.controller('MainController', ['$http', function($http){
   const controller = this;
   this.baseURL = 'https://newsapi.org/v2/';
   this.headlineType = 'top-headlines?';
-  this.sources = 'country=us&category=sports&';
+  this.sources = 'country=us&';
   this.apiKey = 'apiKey=ff8d29868e384305916c64afd64aaa59';
 
   this.getNews = (index) => {

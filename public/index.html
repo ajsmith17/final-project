@@ -8,10 +8,16 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="MainController as ctrl" data-ng-init="ctrl.getNews()">
-    <h1>News App</h1>
+    <h1>FullStack Headlines</h1>
 
     <nav>
-
+      <h5 ng-click="ctrl.changeInclude('us')">US</h5>
+      <h5 ng-click="ctrl.changeInclude('science')">Science</h5>
+      <h5 ng-click="ctrl.changeInclude('business')">Business</h5>
+      <h5 ng-click="ctrl.changeInclude('health')">Health</h5>
+      <h5 ng-click="ctrl.changeInclude('sports')">Sports</h5>
+      <h5 ng-click="ctrl.changeInclude('entertainment')">Entertainment</h5>
+      <h5 ng-click="ctrl.changeInclude('technology')">Technology</h5>
     </nav>
 
     <div ng-repeat="article in ctrl.news">
