@@ -1,0 +1,57 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 0;
+}
+@font-face {
+  font-family: NewsTitle;
+  src: url(assets/chomsky/dist/Chomsky.woff);
+}
+div {
+  border: 1px solid gold;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+img {
+  width: 90%;
+  height: auto;
+}
+h1 {
+  font-family: 'NewsTitle';
+  font-size: 250%;
+  text-align: center;
+  margin-top: 100px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+}
+.topHeader {
+  text-align: center;
+}
+.divide {
+  border: 1px solid black;
+}
+.headlines {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.titles {
+  max-height: 50px;
+}
+.mainArt {
+  width: 45%;
+}

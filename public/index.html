@@ -6,10 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap" rel="stylesheet">
   </head>
-  <body ng-controller="MainController as ctrl" data-ng-init="ctrl.getNews()">
-    <h1>FullStack Headlines</h1>
-
+  <body ng-controller="MainController as ctrl">
+    
     <nav>
       <h5 ng-click="ctrl.changeInclude('us')">US</h5>
       <h5 ng-click="ctrl.changeInclude('science')">Science</h5>
@@ -20,25 +22,31 @@
       <h5 ng-click="ctrl.changeInclude('technology')">Technology</h5>
     </nav>
 
-    <div ng-repeat="article in ctrl.news">
-      <h2>{{article.title}}</h2>
-      <p>{{article.content}}</p>
-    </div>
 
-    <h3>Leave a Comment</h3>
+    <div class="container">
 
-    <form ng-submit="ctrl.addComment()">
-      <input type="text" ng-model="ctrl.name" placeholder="Name">
-      <textarea type="text" ng-model="ctrl.comment" placeholder="Comment..." rows="10" cols="80"></textarea>
-      <input type="submit" value="POST COMMENT">
-    </form>
+      <h1>FullStack Headlines</h1>
 
-    <div data-ng-init="ctrl.getComments()">
-      <div ng-repeat="comment in ctrl.comments">
-        <h4>{{comment.name}}</h4>
-        <p>{{comment.comment}}</p>
+      <div ng-include="ctrl.includePath"></div>
+
+      <h3>Leave a Comment</h3>
+
+      <form ng-submit="ctrl.addComment()">
+        <input type="text" ng-model="ctrl.name" placeholder="Name"><br>
+        <textarea type="text" ng-model="ctrl.comment" placeholder="Comment..." rows="10" cols="80"></textarea><br>
+        <input type="submit" value="POST COMMENT">
+      </form>
+
+      <div data-ng-init="ctrl.getComments()">
+        <div class="comments" ng-repeat="comment in ctrl.comments">
+          <h4>{{comment.name}}</h4>
+          <p>{{comment.createdAt | date: 'short'}}</p>
+          <p>{{comment.comment}}</p>
+        </div>
       </div>
+
     </div>
+
 
   </body>
 </html>
