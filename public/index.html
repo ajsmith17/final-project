@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap" rel="stylesheet">
   </head>
   <body ng-controller="MainController as ctrl">
-    
+
     <nav>
       <h5 ng-click="ctrl.changeInclude('us')">US</h5>
       <h5 ng-click="ctrl.changeInclude('science')">Science</h5>
@@ -26,23 +26,29 @@
     <div class="container">
 
       <h1>FullStack Headlines</h1>
+      <a id="api" href="https://newsapi.org/" target="_blank">Powered by NewsAPI.org</a>
 
       <div ng-include="ctrl.includePath"></div>
 
-      <h3>Leave a Comment</h3>
+      <div class="comment">
+        <h3>Leave a Comment</h3>
 
-      <form ng-submit="ctrl.addComment()">
-        <input type="text" ng-model="ctrl.name" placeholder="Name"><br>
-        <textarea type="text" ng-model="ctrl.comment" placeholder="Comment..." rows="10" cols="80"></textarea><br>
-        <input type="submit" value="POST COMMENT">
-      </form>
+        <form ng-submit="ctrl.addComment()">
+          <input type="text" ng-model="ctrl.name" placeholder="Name"><br><br>
+          <textarea type="text" ng-model="ctrl.comment" placeholder="Comment..." rows="10" cols="80"></textarea><br>
+          <input id="button" type="submit" value="Post Comment">
+        </form>
 
-      <div data-ng-init="ctrl.getComments()">
-        <div class="comments" ng-repeat="comment in ctrl.comments">
-          <h4>{{comment.name}}</h4>
-          <p>{{comment.createdAt | date: 'short'}}</p>
-          <p>{{comment.comment}}</p>
+        <div data-ng-init="ctrl.getComments()">
+          <div class="comments" ng-repeat="comment in ctrl.comments">
+            <div class="commentHead">
+              <h4>{{comment.name}}</h4>
+              <p>{{comment.createdAt | date: 'short'}}</p>
+            </div>
+            <p>{{comment.comment}}</p>
+          </div>
         </div>
+
       </div>
 
     </div>

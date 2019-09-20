@@ -14,9 +14,9 @@ app.controller('MainController', ['$http', function($http){
     $http({
       method: 'GET',
       url: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ff8d29868e384305916c64afd64aaa59'
-      // url: this.baseURL + this.headlineType + this.sources + this.apiKey
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -31,6 +31,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -45,6 +46,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -59,6 +61,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -73,6 +76,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -87,6 +91,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {
@@ -101,6 +106,7 @@ app.controller('MainController', ['$http', function($http){
       url: 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=ff8d29868e384305916c64afd64aaa59'
     }).then( response => {
       this.news = response.data.articles;
+      this.index = 0;
       this.page = pageTitle;
       console.log(response);
     }, (error) => {

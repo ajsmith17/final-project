@@ -1,20 +1,22 @@
 <div class="main-section" data-ng-init="ctrl.getScienceNews()">
 
   <div class="mainArt">
-    <img src="{{ctrl.news[0].urlToImage}}" alt="">
-    <h6>{{ctrl.news[0].publishedAt | date: 'medium'}}</h6>
-    <h2>{{ctrl.news[0].title}}</h2>
-    <p>{{ctrl.news[0].description}}</p>
-    <a href="{{ctrl.news[0].url}}">Go to Article</a>
+    <img src="{{ctrl.news[ctrl.index].urlToImage}}" alt="">
+    <h6>{{ctrl.news[ctrl.index].publishedAt | date: 'medium'}}</h6>
+    <h2>{{ctrl.news[ctrl.index].title}}</h2>
+    <p>{{ctrl.news[ctrl.index].description}}</p>
+    <a class="link" href="{{ctrl.news[ctrl.index].url}}" target="_blank">Go to Article</a>
   </div>
+
+  <div class="divide"></div>
 
   <div class="headlines">
     <div class="topHeader">
       <h3>Top {{ctrl.page}} Headlines</h3>
     </div>
-    <div class="titles" ng-repeat="article in ctrl.news | limitTo: 10">
-      <h5>{{article.title}}</h5>
-    </div>
+    <h5 ng-click="ctrl.index = $index" class="titles" ng-repeat="article in ctrl.news | limitTo: 10 track by $index">
+      {{article.title}}
+    </h5>
   </div>
 
 </div>
